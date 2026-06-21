@@ -1,0 +1,12 @@
+Dockerfile
+.git
+.gitignore
+backend/vendor
+backend/.env
+backend/.env.*
+backend/node_modules
+backend/storage/logs/*
+backend/storage/framework/cache/data/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+*.md
