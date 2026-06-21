@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>D&P Perfumum — Отзывы</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">D&amp;P <span>Perfumum</span></div>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="catalog.html" class="nav__link">Каталог</a>
+        <a href="cart.html" class="nav__link">Корзина<span class="nav__badge" id="cart-counter" hidden>0</span></a>
+        <a href="wishlist.html" class="nav__link">Избранное</a>
+        <a href="reviews.html" class="nav__link nav__link--active">Отзывы</a>
+        <a href="profile.html" class="nav__link" id="profile-nav-link" hidden>Профиль</a>
+        <a href="orders.html" class="nav__link" id="orders-nav-link" hidden>Заказы</a>
+        <a href="login.html" class="nav__link" id="user-nav-link">Вход</a>
+        <a href="admin.html" class="nav__link nav__link--admin" id="admin-nav-link" hidden>Админка</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="container reviews-page">
+        <div class="reviews-page__list">
+          <h1 class="section__title">Отзывы наших покупателей</h1>
+          <div class="reviews-list" id="public-reviews">
+            <!-- Заполняется из app.js -->
+          </div>
+        </div>
+
+        <div class="reviews-page__form">
+          <div class="reviews-form-card">
+            <h2 class="section__title section__title--small">Оставить отзыв</h2>
+            <p class="section__subtitle">Авторизуйтесь как покупатель, чтобы оставить отзыв о заказе.</p>
+            <form id="review-form" class="form">
+              <div class="form__group">
+                <label for="review-name" class="form__label">Ваше имя</label>
+                <input type="text" id="review-name" class="input" placeholder="Например, Анна" required>
+              </div>
+              <div class="form__group">
+                <label for="review-rating" class="form__label">Оценка</label>
+                <select id="review-rating" class="input" required>
+                  <option value="5">5 — превосходно</option>
+                  <option value="4">4 — очень хорошо</option>
+                  <option value="3">3 — нормально</option>
+                  <option value="2">2 — не очень</option>
+                  <option value="1">1 — плохо</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label for="review-text" class="form__label">Комментарий</label>
+                <textarea id="review-text" class="input input--textarea" rows="4" placeholder="Поделитесь своими впечатлениями..." required></textarea>
+              </div>
+              <div class="form__actions">
+                <button type="submit" class="btn btn--primary">Отправить отзыв</button>
+              </div>
+              <div class="form__message" id="review-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="#" class="whatsapp-btn" id="whatsapp-btn" aria-label="Написать в WhatsApp">
+    <span class="whatsapp-btn__icon">W</span>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

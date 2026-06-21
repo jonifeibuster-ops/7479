@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>D&P Perfumum — Корзина</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">D&amp;P <span>Perfumum</span></div>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="catalog.html" class="nav__link">Каталог</a>
+        <a href="cart.html" class="nav__link nav__link--active">Корзина<span class="nav__badge" id="cart-counter" hidden>0</span></a>
+        <a href="wishlist.html" class="nav__link">Избранное</a>
+        <a href="reviews.html" class="nav__link">Отзывы</a>
+        <a href="profile.html" class="nav__link" id="profile-nav-link" hidden>Профиль</a>
+        <a href="orders.html" class="nav__link" id="orders-nav-link" hidden>Заказы</a>
+        <a href="login.html" class="nav__link" id="user-nav-link">Вход</a>
+        <a href="admin.html" class="nav__link nav__link--admin" id="admin-nav-link" hidden>Админка</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="container">
+        <h1 class="section__title">Ваша корзина</h1>
+        <div id="cart-empty" class="cart-empty">
+          Корзина пуста. Перейдите в <a href="catalog.html">каталог</a>, чтобы подобрать аромат.
+        </div>
+        <div id="cart-items" class="cart-items" hidden>
+          <!-- Заполняется из app.js -->
+        </div>
+        <div id="cart-summary" class="cart-summary" hidden>
+          <div class="cart-summary__promo">
+            <div class="form__group">
+              <label for="promocode-input" class="form__label">Промокод</label>
+              <div style="display: flex; gap: 8px;">
+                <input type="text" id="promocode-input" class="input" placeholder="Введите промокод">
+                <button type="button" class="btn btn--outline" id="promocode-btn">Применить</button>
+              </div>
+              <div class="form__message" id="promocode-message"></div>
+            </div>
+          </div>
+          <div class="cart-summary__row">
+            <span>Количество товаров:</span>
+            <span id="cart-total-qty"></span>
+          </div>
+          <div class="cart-summary__row" id="cart-discount-row" hidden>
+            <span>Скидка:</span>
+            <span id="cart-discount">0 ₽</span>
+          </div>
+          <div class="cart-summary__row cart-summary__row--total">
+            <span>Итого к оплате:</span>
+            <span id="cart-total-price"></span>
+          </div>
+          <button class="btn btn--primary cart-summary__btn" id="checkout-btn">Оформить заказ</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="#" class="whatsapp-btn" id="whatsapp-btn" aria-label="Написать в WhatsApp">
+    <span class="whatsapp-btn__icon">W</span>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

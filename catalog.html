@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>D&P Perfumum — Каталог</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">D&amp;P <span>Perfumum</span></div>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="catalog.html" class="nav__link nav__link--active">Каталог</a>
+        <a href="cart.html" class="nav__link">Корзина<span class="nav__badge" id="cart-counter" hidden>0</span></a>
+        <a href="wishlist.html" class="nav__link">Избранное</a>
+        <a href="reviews.html" class="nav__link">Отзывы</a>
+        <a href="profile.html" class="nav__link" id="profile-nav-link" hidden>Профиль</a>
+        <a href="orders.html" class="nav__link" id="orders-nav-link" hidden>Заказы</a>
+        <a href="login.html" class="nav__link" id="user-nav-link">Вход</a>
+        <a href="admin.html" class="nav__link nav__link--admin" id="admin-nav-link" hidden>Админка</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h1 class="section__title">Каталог ароматов</h1>
+          <div class="catalog-filters">
+            <input type="text" id="search-input" class="input" placeholder="Поиск по названию или нотам...">
+            <select id="category-filter" class="input">
+              <option value="">Все категории</option>
+              <option value="женские">Женские</option>
+              <option value="мужские">Мужские</option>
+              <option value="унисекс">Унисекс</option>
+            </select>
+            <select id="price-filter" class="input">
+              <option value="">Все цены</option>
+              <option value="0-2500">До 2 500 ₽</option>
+              <option value="2500-3200">2 500 - 3 200 ₽</option>
+              <option value="3200-3600">3 200 - 3 600 ₽</option>
+              <option value="3600-999999">От 3 600 ₽</option>
+            </select>
+            <select id="sort-select" class="input">
+              <option value="default">По умолчанию</option>
+              <option value="popular">Популярные</option>
+              <option value="price-asc">Цена: по возрастанию</option>
+              <option value="price-desc">Цена: по убыванию</option>
+              <option value="name">По названию</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="products-grid" id="catalog-products">
+          <!-- Заполняется из app.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="#" class="whatsapp-btn" id="whatsapp-btn" aria-label="Написать в WhatsApp">
+    <span class="whatsapp-btn__icon">W</span>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

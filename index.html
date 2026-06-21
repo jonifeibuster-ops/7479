@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>D&P Perfumum — Главная</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">D&amp;P <span>Perfumum</span></div>
+      <nav class="nav">
+        <a href="index.html" class="nav__link nav__link--active">Главная</a>
+        <a href="catalog.html" class="nav__link">Каталог</a>
+        <a href="cart.html" class="nav__link">Корзина<span class="nav__badge" id="cart-counter" hidden>0</span></a>
+        <a href="wishlist.html" class="nav__link">Избранное</a>
+        <a href="reviews.html" class="nav__link">Отзывы</a>
+        <a href="profile.html" class="nav__link" id="profile-nav-link" hidden>Профиль</a>
+        <a href="orders.html" class="nav__link" id="orders-nav-link" hidden>Заказы</a>
+        <a href="login.html" class="nav__link" id="user-nav-link">Вход</a>
+        <a href="admin.html" class="nav__link nav__link--admin" id="admin-nav-link" hidden>Админка</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">Интернет-магазин парфюмерии <span>D&amp;P Perfumum</span></h1>
+          <p class="hero__subtitle">
+            Премиальные ароматы в чёрно‑золотом исполнении. Подчеркните свой стиль изысканным шлейфом.
+          </p>
+          <div class="hero__actions">
+            <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
+            <a href="cart.html" class="btn btn--outline">Перейти в корзину</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="bottle-card">
+            <div class="bottle-card__glass"></div>
+            <div class="bottle-card__label">D&amp;P</div>
+            <div class="bottle-card__glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--dark">
+      <div class="container">
+        <h2 class="section__title">Почему выбирают нас</h2>
+        <div class="features">
+          <div class="feature-card">
+            <h3 class="feature-card__title">Премиальное качество</h3>
+            <p class="feature-card__text">Стойкие композиции, вдохновлённые мировыми ароматами.</p>
+          </div>
+          <div class="feature-card">
+            <h3 class="feature-card__title">Быстрая доставка</h3>
+            <p class="feature-card__text">Отправка в течение 24 часов в надёжной защитной упаковке.</p>
+          </div>
+          <div class="feature-card">
+            <h3 class="feature-card__title">Удобная покупка</h3>
+            <p class="feature-card__text">Корзина, личный вход и поддержка в один клик через WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Популярные ароматы</h2>
+        <div class="products-grid" id="popular-products">
+          <!-- Заполняется из app.js -->
+        </div>
+        <div class="section__actions">
+          <a href="catalog.html" class="btn btn--primary">Открыть весь каталог</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© D&amp;P Perfumum, <span id="year"></span></p>
+      <p class="footer__info">Интернет-магазин парфюмерии. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <a href="#" class="whatsapp-btn" id="whatsapp-btn" aria-label="Написать в WhatsApp">
+    <span class="whatsapp-btn__icon">W</span>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
+

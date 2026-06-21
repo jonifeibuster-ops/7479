@@ -1,0 +1,99 @@
+/* Дополнительные стили для страницы отзывов SEVER COSMETICS */
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.star-rating__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.star-rating__star {
+  font-size: 28px;
+  line-height: 1;
+  color: rgba(209, 166, 91, 0.25);
+  cursor: pointer;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  user-select: none;
+}
+
+.star-rating__star:hover,
+.star-rating__star:hover ~ .star-rating__star,
+.star-rating__input:checked ~ .star-rating__star,
+.star-rating__input:focus-visible + .star-rating__star {
+  color: var(--color-gold);
+}
+
+.star-rating__star:hover {
+  transform: scale(1.08);
+}
+
+.review-card__rating .star--filled {
+  color: var(--color-gold);
+}
+
+.review-card__rating .star--empty {
+  color: rgba(209, 166, 91, 0.25);
+}
+
+.form__message--page {
+  margin-bottom: 16px;
+}
+
+.form__field-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #f87171;
+}
+
+.input--error {
+  border-color: rgba(248, 113, 113, 0.7) !important;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 8px;
+}
+
+.pagination__link {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+  transition: color var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.pagination__link:hover:not(.pagination__link--disabled) {
+  color: var(--color-text);
+  border-color: rgba(209, 166, 91, 0.4);
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+}
+
+.pagination__link--disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.pagination__info {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+#review-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

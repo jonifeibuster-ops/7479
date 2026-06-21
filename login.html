@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>D&P Perfumum — Вход</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">D&amp;P <span>Perfumum</span></div>
+      <nav class="nav">
+        <a href="index.html" class="nav__link">Главная</a>
+        <a href="catalog.html" class="nav__link">Каталог</a>
+        <a href="cart.html" class="nav__link">Корзина<span class="nav__badge" id="cart-counter" hidden>0</span></a>
+        <a href="wishlist.html" class="nav__link">Избранное</a>
+        <a href="reviews.html" class="nav__link">Отзывы</a>
+        <a href="profile.html" class="nav__link" id="profile-nav-link" hidden>Профиль</a>
+        <a href="orders.html" class="nav__link" id="orders-nav-link" hidden>Заказы</a>
+        <a href="login.html" class="nav__link nav__link--active" id="user-nav-link">Вход</a>
+        <a href="admin.html" class="nav__link nav__link--admin" id="admin-nav-link" hidden>Админка</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="container auth">
+        <div class="auth-card">
+          <h1 class="section__title">Вход в аккаунт</h1>
+          <p class="auth__subtitle">Выберите тип входа: покупатель или администратор.</p>
+
+          <form id="login-form" class="form">
+            <div class="form__group">
+              <label class="form__label">Роль</label>
+              <div class="role-switch">
+                <button type="button" class="role-switch__btn role-switch__btn--active" data-role="customer">Покупатель</button>
+                <button type="button" class="role-switch__btn" data-role="admin">Администратор</button>
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label for="login-email" class="form__label">E-mail</label>
+              <input type="email" id="login-email" class="input" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form__group" id="password-group" hidden>
+              <label for="login-password" class="form__label">Пароль администратора</label>
+              <input type="password" id="login-password" class="input" placeholder="Введите пароль администратора">
+              <small class="form__hint">Для примера: admin123</small>
+            </div>
+
+            <div class="form__actions">
+              <button type="submit" class="btn btn--primary">Войти</button>
+            </div>
+            <div class="form__message" id="login-message"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="#" class="whatsapp-btn" id="whatsapp-btn" aria-label="Написать в WhatsApp">
+    <span class="whatsapp-btn__icon">W</span>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
