@@ -2,6 +2,10 @@
 
 @section('title', 'SEVER COSMETICS — Отзывы')
 
+@push('head')
+<link rel="stylesheet" href="{{ asset('css/reviews.css') }}">
+@endpush
+
 @section('content')
 <section class="section">
     <div class="container reviews-page">
@@ -61,7 +65,7 @@
                 <h2 class="section__title section__title--small">Оставить отзыв</h2>
                 <p class="section__subtitle">Поделитесь впечатлениями о покупке — отзыв появится после модерации.</p>
 
-                <form id="review-form" class="form" action="{{ route('reviews.store') }}" method="POST" novalidate>
+                <form id="review-form" class="form" action="{{ route('reviews.store') }}" method="POST" novalidate data-laravel>
                     @csrf
 
                     <div class="form__group">
