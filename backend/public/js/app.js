@@ -46,7 +46,9 @@ function formatPrice(value) {
 }
 
 function productImageSrc(product) {
-  return product.image || `/images/products/${product.id}.svg`;
+  if (product.image) return product.image;
+  const id = product.id || 'p1';
+  return `/images/products/${id}.png`;
 }
 
 // Демонстрационный список товаров
@@ -66,7 +68,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p2',
     name: 'Север No. 07',
-    image: '/images/products/p2.svg',
+    image: '/images/products/p2.png',
     notes: 'Жасмин, ваниль, мускус',
     category: 'женские',
     volume: '50 мл',
@@ -78,7 +80,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p3',
     name: 'Север Нуар',
-    image: '/images/products/p3.svg',
+    image: '/images/products/p3.png',
     notes: 'Ладан, кожа, тёмные древесные ноты',
     category: 'мужские',
     volume: '50 мл',
@@ -90,7 +92,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p4',
     name: 'Север Океан',
-    image: '/images/products/p4.svg',
+    image: '/images/products/p4.png',
     notes: 'Морской бриз, цитрус, кедр',
     category: 'мужские',
     volume: '50 мл',
@@ -101,7 +103,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p5',
     name: 'Север Унисон',
-    image: '/images/products/p5.svg',
+    image: '/images/products/p5.png',
     notes: 'Амбра, ирис, специи',
     category: 'унисекс',
     volume: '50 мл',
@@ -112,7 +114,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p6',
     name: 'Север Бархат',
-    image: '/images/products/p6.svg',
+    image: '/images/products/p6.png',
     notes: 'Роза, пачули, пралине',
     category: 'женские',
     volume: '30 мл',
@@ -122,10 +124,10 @@ const DEFAULT_PRODUCTS = [
   },
 ];
 
-let PRODUCTS = readStorage('sever_products_v2', DEFAULT_PRODUCTS);
+let PRODUCTS = readStorage('sever_products_v3', DEFAULT_PRODUCTS);
 
 function saveProducts() {
-  writeStorage('sever_products_v2', PRODUCTS);
+  writeStorage('sever_products_v3', PRODUCTS);
 }
 
 // ===== Пользователь / авторизация =====
@@ -396,7 +398,7 @@ function createProductCard(product, options = {}) {
 
   card.innerHTML = `
     <a href="${productUrl(product.id)}" class="product-card__media">
-      <img src="${productImageSrc(product)}" alt="${product.name}" loading="lazy" width="480" height="640" onerror="this.onerror=null;this.src='/images/products/${product.id}.svg'">
+      <img src="${productImageSrc(product)}" alt="${product.name}" loading="lazy" width="480" height="640" onerror="this.onerror=null;this.src='/images/products/${product.id}.png'">
     </a>
     <div class="product-card__top">
       <div>
@@ -991,7 +993,7 @@ function initProductPage() {
 
   container.innerHTML = `
     <div class="product-detail__image">
-      <img src="${productImageSrc(product)}" alt="${product.name}" class="product-detail__photo" width="480" height="640" onerror="this.onerror=null;this.src='/images/products/${product.id}.svg'">
+      <img src="${productImageSrc(product)}" alt="${product.name}" class="product-detail__photo" width="480" height="640" onerror="this.onerror=null;this.src='/images/products/${product.id}.png'">
     </div>
     <div class="product-detail__info">
       <h1 class="product-detail__name">${product.name}</h1>
@@ -1313,7 +1315,7 @@ function initAdminProducts() {
         }
       } else {
         const newId = 'p' + Date.now();
-        PRODUCTS.push({ id: newId, name, price, category, volume, notes, description, popular, inStock, image: `/images/products/${newId}.svg` });
+        PRODUCTS.push({ id: newId, name, price, category, volume, notes, description, popular, inStock, image: `/images/products/${newId}.png` });
       }
 
       saveProducts();
