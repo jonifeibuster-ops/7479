@@ -124,10 +124,10 @@ const DEFAULT_PRODUCTS = [
   },
 ];
 
-let PRODUCTS = readStorage('sever_products_v4', DEFAULT_PRODUCTS);
+let PRODUCTS = readStorage('sever_products_v5', DEFAULT_PRODUCTS);
 
 function saveProducts() {
-  writeStorage('sever_products_v4', PRODUCTS);
+  writeStorage('sever_products_v5', PRODUCTS);
 }
 
 // ===== Пользователь / авторизация =====
