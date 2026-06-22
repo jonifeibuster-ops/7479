@@ -92,7 +92,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p4',
     name: 'Север Океан',
-    image: '/images/products/p4.jpg',
+    image: '/images/products/p4.png',
     notes: 'Морской бриз, цитрус, кедр',
     category: 'мужские',
     volume: '50 мл',
@@ -103,7 +103,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p5',
     name: 'Север Унисон',
-    image: '/images/products/p5.jpg',
+    image: '/images/products/p5.png',
     notes: 'Амбра, ирис, специи',
     category: 'унисекс',
     volume: '50 мл',
@@ -114,7 +114,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p6',
     name: 'Север Бархат',
-    image: '/images/products/p6.jpg',
+    image: '/images/products/p6.png',
     notes: 'Роза, пачули, пралине',
     category: 'женские',
     volume: '30 мл',
@@ -124,10 +124,10 @@ const DEFAULT_PRODUCTS = [
   },
 ];
 
-let PRODUCTS = readStorage('sever_products_v5', DEFAULT_PRODUCTS);
+let PRODUCTS = readStorage('sever_products_v6', DEFAULT_PRODUCTS);
 
 function saveProducts() {
-  writeStorage('sever_products_v5', PRODUCTS);
+  writeStorage('sever_products_v6', PRODUCTS);
 }
 
 // ===== Пользователь / авторизация =====

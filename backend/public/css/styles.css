@@ -366,14 +366,14 @@ a:hover {
   display: block;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: #0a0a0c;
+  background: #f4f4f4;
   border-bottom: 1px solid rgba(209, 166, 91, 0.15);
 }
 
 .product-card__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: transform var(--transition);
 }
@@ -949,7 +949,8 @@ a:hover {
   border-radius: var(--radius-lg);
   border: 1px solid rgba(209, 166, 91, 0.3);
   box-shadow: var(--shadow-soft);
-  object-fit: cover;
+  object-fit: contain;
+  background: #f4f4f4;
 }
 
 .bottle-card--large {
