@@ -1,6 +1,7 @@
 [variables]
 IS_LARAVEL = "yes"
 NIXPACKS_PHP_ROOT_DIR = "/app/public"
+NIXPACKS_BUILD_CMD = "true"
 
 [phases.setup]
 nixPkgs = [
