@@ -15,8 +15,12 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
+ARG CACHE_BUST=3
+
 COPY backend/composer.json backend/composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
+RUN php -v \
+    && grep -A1 '"name": "symfony/clock"' composer.lock \
+    && composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
 COPY backend/ .
 

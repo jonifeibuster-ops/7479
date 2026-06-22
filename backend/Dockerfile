@@ -15,8 +15,13 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
+# CACHE_BUST=3 — сброс кэша Docker на Railway
+ARG CACHE_BUST=3
+
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
+RUN php -v \
+    && grep -A1 '"name": "symfony/clock"' composer.lock \
+    && composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
 COPY . .
 
