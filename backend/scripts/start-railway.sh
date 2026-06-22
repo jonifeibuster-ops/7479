@@ -4,7 +4,7 @@ set -e
 PORT="${PORT:-8080}"
 
 echo "=========================================="
-echo " SEVER COSMETICS — Railway startup"
+echo " СЕВЕР КОСМЕТИКА — Railway startup"
 echo "=========================================="
 echo "PORT: ${PORT}"
 

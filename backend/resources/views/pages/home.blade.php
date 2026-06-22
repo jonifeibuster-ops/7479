@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'SEVER COSMETICS — Главная')
+@section('title', 'СЕВЕР КОСМЕТИКА — Главная')
 
 @section('content')
 <section class="hero">
     <div class="container hero__inner">
         <div class="hero__content">
-            <h1 class="hero__title">Интернет-магазин парфюмерии <span>SEVER COSMETICS</span></h1>
+            <h1 class="hero__title">Интернет-магазин парфюмерии <span>СЕВЕР КОСМЕТИКА</span></h1>
             <p class="hero__subtitle">
                 Премиальные ароматы в чёрно‑золотом исполнении. Подчеркните свой стиль изысканным шлейфом.
             </p>
@@ -16,11 +16,7 @@
             </div>
         </div>
         <div class="hero__visual">
-            <div class="bottle-card">
-                <div class="bottle-card__glass"></div>
-                <div class="bottle-card__label">SEVER</div>
-                <div class="bottle-card__glow"></div>
-            </div>
+            <img src="{{ asset('images/products/p1.jpg') }}" alt="Север No. 01" class="hero__product-photo" width="480" height="640" onerror="this.onerror=null;this.src='{{ asset('images/products/p1.svg') }}';">
         </div>
     </div>
 </section>

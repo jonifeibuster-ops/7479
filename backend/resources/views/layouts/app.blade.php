@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'SEVER COSMETICS')</title>
+    <title>@yield('title', 'СЕВЕР КОСМЕТИКА')</title>
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     @stack('head')
 </head>
 <body class="page">
     <header class="header">
         <div class="container header__inner">
-            <a href="{{ route('home') }}" class="logo">SEVER <span>COSMETICS</span></a>
+            <a href="{{ route('home') }}" class="logo">СЕВЕР <span>КОСМЕТИКА</span></a>
             <nav class="nav">
                 <a href="{{ route('home') }}" class="nav__link @if(request()->routeIs('home')) nav__link--active @endif">Главная</a>
                 <a href="{{ route('catalog') }}" class="nav__link @if(request()->routeIs('catalog')) nav__link--active @endif">Каталог</a>
@@ -35,7 +35,7 @@
     @else
         <footer class="footer">
             <div class="container footer__inner">
-                <p class="footer__copy">&copy; SEVER COSMETICS, <span id="year"></span></p>
+                <p class="footer__copy">&copy; СЕВЕР КОСМЕТИКА, <span id="year"></span></p>
                 <p class="footer__info">Интернет-магазин парфюмерии. Все права защищены.</p>
             </div>
         </footer>

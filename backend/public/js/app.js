@@ -45,11 +45,16 @@ function formatPrice(value) {
   return value.toLocaleString('ru-RU') + ' ₽';
 }
 
+function productImageSrc(product) {
+  return product.image || `/images/products/${product.id}.svg`;
+}
+
 // Демонстрационный список товаров
-let PRODUCTS = readStorage('dp_products', [
+const DEFAULT_PRODUCTS = [
   {
     id: 'p1',
-    name: 'D&P No. 01',
+    name: 'Север No. 01',
+    image: '/images/products/p1.jpg',
     notes: 'Цитрусовые, бергамот, белые цветы',
     category: 'женские',
     volume: '50 мл',
@@ -60,7 +65,8 @@ let PRODUCTS = readStorage('dp_products', [
   },
   {
     id: 'p2',
-    name: 'D&P No. 07',
+    name: 'Север No. 07',
+    image: '/images/products/p2.svg',
     notes: 'Жасмин, ваниль, мускус',
     category: 'женские',
     volume: '50 мл',
@@ -71,7 +77,8 @@ let PRODUCTS = readStorage('dp_products', [
   },
   {
     id: 'p3',
-    name: 'D&P Noir',
+    name: 'Север Нуар',
+    image: '/images/products/p3.svg',
     notes: 'Ладан, кожа, тёмные древесные ноты',
     category: 'мужские',
     volume: '50 мл',
@@ -82,7 +89,8 @@ let PRODUCTS = readStorage('dp_products', [
   },
   {
     id: 'p4',
-    name: 'D&P Ocean',
+    name: 'Север Океан',
+    image: '/images/products/p4.svg',
     notes: 'Морской бриз, цитрус, кедр',
     category: 'мужские',
     volume: '50 мл',
@@ -92,7 +100,8 @@ let PRODUCTS = readStorage('dp_products', [
   },
   {
     id: 'p5',
-    name: 'D&P Unisense',
+    name: 'Север Унисон',
+    image: '/images/products/p5.svg',
     notes: 'Амбра, ирис, специи',
     category: 'унисекс',
     volume: '50 мл',
@@ -102,7 +111,8 @@ let PRODUCTS = readStorage('dp_products', [
   },
   {
     id: 'p6',
-    name: 'D&P Velvet',
+    name: 'Север Бархат',
+    image: '/images/products/p6.svg',
     notes: 'Роза, пачули, пралине',
     category: 'женские',
     volume: '30 мл',
@@ -110,10 +120,12 @@ let PRODUCTS = readStorage('dp_products', [
     description: 'Нежный и чувственный аромат с нотами розы, пачули и пралине. Для особых моментов.',
     inStock: true,
   },
-]);
+];
+
+let PRODUCTS = readStorage('sever_products_v2', DEFAULT_PRODUCTS);
 
 function saveProducts() {
-  writeStorage('dp_products', PRODUCTS);
+  writeStorage('sever_products_v2', PRODUCTS);
 }
 
 // ===== Пользователь / авторизация =====
@@ -383,6 +395,9 @@ function createProductCard(product, options = {}) {
   const inWishlist = isInWishlist(product.id);
 
   card.innerHTML = `
+    <a href="${productUrl(product.id)}" class="product-card__media">
+      <img src="${productImageSrc(product)}" alt="${product.name}" loading="lazy" width="480" height="640" onerror="this.onerror=null;this.src='/images/products/${product.id}.svg'">
+    </a>
     <div class="product-card__top">
       <div>
         <div class="product-card__name">
@@ -976,11 +991,7 @@ function initProductPage() {
 
   container.innerHTML = `
     <div class="product-detail__image">
-      <div class="bottle-card bottle-card--large">
-        <div class="bottle-card__glass"></div>
-        <div class="bottle-card__label">${product.name}</div>
-        <div class="bottle-card__glow"></div>
-      </div>
+      <img src="${productImageSrc(product)}" alt="${product.name}" class="product-detail__photo" width="480" height="640" onerror="this.onerror=null;this.src='/images/products/${product.id}.svg'">
     </div>
     <div class="product-detail__info">
       <h1 class="product-detail__name">${product.name}</h1>
@@ -1302,7 +1313,7 @@ function initAdminProducts() {
         }
       } else {
         const newId = 'p' + Date.now();
-        PRODUCTS.push({ id: newId, name, price, category, volume, notes, description, popular, inStock });
+        PRODUCTS.push({ id: newId, name, price, category, volume, notes, description, popular, inStock, image: `/images/products/${newId}.svg` });
       }
 
       saveProducts();

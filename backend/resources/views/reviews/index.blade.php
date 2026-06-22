@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'SEVER COSMETICS — Отзывы')
+@section('title', 'СЕВЕР КОСМЕТИКА — Отзывы')
 
 @push('head')
 <link rel="stylesheet" href="{{ asset('css/reviews.css') }}">
