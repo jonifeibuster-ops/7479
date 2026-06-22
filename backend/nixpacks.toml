@@ -1,6 +1,4 @@
 [variables]
-IS_LARAVEL = "yes"
-NIXPACKS_PHP_ROOT_DIR = "/app/public"
 NIXPACKS_BUILD_CMD = "true"
 
 [phases.setup]
@@ -18,11 +16,11 @@ cmds = [
   "cp -n .env.example .env || true",
   "php artisan package:discover --ansi",
   "chmod -R 775 storage bootstrap/cache",
+  "chmod +x scripts/start-railway.sh",
 ]
 
-# Статика уже в public/css и public/js — Vite/npm не нужны
 [phases.build]
 cmds = []
 
 [start]
-cmd = "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$PORT"
+cmd = "bash scripts/start-railway.sh"
