@@ -15,10 +15,10 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-COPY backend/composer.json backend/composer.lock ./
+COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader --no-interaction --no-scripts
 
-COPY backend/ .
+COPY . .
 
 RUN composer dump-autoload --optimize \
     && cp .env.example .env \
