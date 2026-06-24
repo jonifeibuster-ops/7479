@@ -48,7 +48,7 @@ function formatPrice(value) {
 function productImageSrc(product) {
   if (product.image) return product.image;
   const id = product.id || 'p1';
-  return `/images/products/${id}.jpg`;
+  return `/images/products/${id}.png`;
 }
 
 // Демонстрационный список товаров
@@ -56,7 +56,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p1',
     name: 'Север No. 01',
-    image: '/images/products/p1.jpg',
+    image: '/images/products/p1.png',
     notes: 'Цитрусовые, бергамот, белые цветы',
     category: 'женские',
     volume: '50 мл',
@@ -68,7 +68,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p2',
     name: 'Север No. 07',
-    image: '/images/products/p2.jpg',
+    image: '/images/products/p2.png',
     notes: 'Жасмин, ваниль, мускус',
     category: 'женские',
     volume: '50 мл',
@@ -80,7 +80,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 'p3',
     name: 'Север Нуар',
-    image: '/images/products/p3.jpg',
+    image: '/images/products/p3.png',
     notes: 'Ладан, кожа, тёмные древесные ноты',
     category: 'мужские',
     volume: '50 мл',
@@ -1315,7 +1315,7 @@ function initAdminProducts() {
         }
       } else {
         const newId = 'p' + Date.now();
-        PRODUCTS.push({ id: newId, name, price, category, volume, notes, description, popular, inStock, image: `/images/products/p1.jpg` });
+        PRODUCTS.push({ id: newId, name, price, category, volume, notes, description, popular, inStock, image: `/images/products/p1.png` });
       }
 
       saveProducts();

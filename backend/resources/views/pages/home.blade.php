@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="hero__visual">
-            <img src="{{ asset('images/products/p1.jpg') }}" alt="Север No. 01" class="hero__product-photo" width="480" height="640" onerror="this.onerror=null;this.src='{{ asset('images/products/p1.svg') }}';">
+            <img src="{{ asset('images/products/p1.png') }}" alt="Север No. 01" class="hero__product-photo" width="480" height="640">
         </div>
     </div>
 </section>
